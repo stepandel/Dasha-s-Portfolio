@@ -1,0 +1,19 @@
+label{
+    color: #6C757D;
+}
+
+.btn-submit{
+    color: #E1E0E0;
+
+    &:hover{
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+#responseModal{
+
+    .modal-footer{
+        border: none;
+    }
+}

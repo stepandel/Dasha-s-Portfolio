@@ -1,0 +1,30 @@
+<!-- HOME SECTION -->
+<div appScroll id="home" (scroll)="scrollHandler($event)">
+
+    <div id="header" class="container">
+      <img src="../assets/images/name.png" alt="Dasha Arsentjeva">
+    </div>
+
+    <div id="social-media" class="px-4">
+      <div class="container">
+        <h3>
+          <a href="https://www.facebook.com/dasha.arsa" target="_blank"><i class="fa fa-facebook-square"></i></a>
+          <a href="https://www.instagram.com/lontanna/" target="_blank"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-envelope"></i></a>
+        </h3>
+      </div>
+    </div>
+
+</div>
+
+
+
+<div class="container p-0">
+  <div id="galary" class="container bg-dark">
+    <app-navbar></app-navbar>
+    <div class="container py-5 pl-3 pr-5">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

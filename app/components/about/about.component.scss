@@ -1,0 +1,30 @@
+
+    h5{
+        font-family: Helvetica;
+        color: #D8D8D8;
+
+        span{
+            color: #6C757D;
+
+            .secondary{
+                font-size: 10px;
+            }
+        }
+    }
+
+    p{
+        font-family: Helvetica;
+        color: #6C757D;
+
+        a{
+            color: #6C757D;
+
+            &:hover{
+                color: #ffffff;
+            }
+        }
+    }    
+
+
+
+

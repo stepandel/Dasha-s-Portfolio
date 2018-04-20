@@ -1,0 +1,103 @@
+<div class="container container-galary">
+
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+    <div class="form-group">
+
+      <div class="form-group row">
+        <div class="col-2"></div>
+        <div class="col-4">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              #messageName="ngModel"
+              [ngClass]="{'is-invalid': messageName.errors?.required && messageName.touched}"
+              [(ngModel)]="message.name"
+              required
+            >
+            <div class="invalid-feedback">
+              Please include your name
+            </div>
+        </div>
+        <div class="col-4">
+          <label for="email" class="">Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email" 
+            #messageEmail="ngModel"
+            [ngClass]="{'is-invalid': messageEmail.errors?.required && messageEmail.touched}"
+            [(ngModel)]="message.email"
+            required
+          >
+          <div class="invalid-feedback">
+            Please include your email
+          </div>
+        </div>
+        <div class="col-2"></div>
+      </div>
+      
+      <div class="form-group row">
+        <div class="col-2"></div>
+        <div class="col-8">
+          <label for="message">Message:</label>
+          <textarea
+            rows="13"
+            class="form-control"
+            name="message"
+            #messageMessage="ngModel"
+            [ngClass]="{'is-invalid': messageMessage.errors?.required && messageMessage.touched}"
+            [(ngModel)]="message.message"
+            required
+          ></textarea>
+          <div class="invalid-feedback">
+            Please include a message
+          </div>
+        </div>
+        <div class="col-2"></div>
+      </div>
+      
+      <div class="form-group row justify-content-center">
+        <input type="submit" class="btn btn-link btn-submit" data-target="#responseModal" data-toggle="modal" value="Send">
+      </div>
+      
+    </div>
+  </form>
+
+  <!-- <div class="row pt-3 text-center">
+    <div class="col-5"></div>
+    <div class="col-1">
+      <a href="https://www.facebook.com/dasha.arsa" target="_blank"><i class="fa fa-facebook-square"></i></a>
+    </div>
+    <div class="col-1">
+      <a href="https://www.instagram.com/lontanna/" target="_blank"><i class="fa fa-instagram"></i></a>
+    </div>
+    <div class="col-5"></div>
+  </div> -->
+
+</div>
+
+<!-- RESPONSE MODAL -->
+<div class="modal fade" id="responseModal" data-backdrop="false">
+
+  <div class="modal-dialog text-center pt-5" >
+    <div class="modal-content bg-dark pt-5" [ngClass]="{'text-danger': !response.success}">
+
+      <div *ngIf="response" class="modal-body">
+        <h5>{{ response.header }}</h5>
+        <br>
+        <p>{{ response.body }}</p>
+      </div>
+
+      <div class="modal-footer m-auto">
+          <button type="button" class="btn btn-outline-secondary" (click)="onClick()" data-dismiss="modal">OK</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+
